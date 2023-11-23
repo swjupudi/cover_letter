@@ -5,6 +5,15 @@ import PyPDF2
 from openai import OpenAI
 
 def read_resume(resume_path: str) -> str:
+  """
+  Read the content of a PDF resume file.
+
+  Args:
+    resume_path (str): The path to the PDF resume file.
+
+  Returns:
+    str: The extracted text from the first page of the PDF resume.
+  """
   pdfFileObj = open(resume_path, 'rb')
   reader = PyPDF2.PdfReader(pdfFileObj)
   return reader.pages[0].extract_text()
@@ -12,6 +21,16 @@ def read_resume(resume_path: str) -> str:
 
 
 def create_cover_letter(job_desc:str, resume:str)-> str:
+  """
+  Generates a cover letter for a job posting based on the given job description and resume.
+
+  Args:
+    job_desc (str): The job description for which the cover letter is being generated.
+    resume (str): The resume of the job seeker.
+
+  Returns:
+    str: The generated cover letter.
+  """
   settings = load_settings()
   client = OpenAI(
       api_key=settings.openai_api_key
