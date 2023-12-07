@@ -6,3 +6,10 @@ Prerequisites to execute the code:
 2. Install poetry >= 1.4 version
 3. Run `poetry install` in the python environment of your choice
  
+To execute the code:
+1. Make sure you are in the right conda environment where the project is installed
+2. Type in the command `createcl` and press enter
+3. Copy the job description and press enter
+
+Note: 
+It could take a while for the cover letter to be displayed in the terminal. For faster responses, consider changing the model to chatgpt 4
